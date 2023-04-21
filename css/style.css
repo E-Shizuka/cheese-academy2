@@ -1,0 +1,376 @@
+/*全体共通
+最初から設定してあるので特に変更
+しなくても大丈夫です♪
+-----------------*/
+#stalker {
+	pointer-events: none;
+	position: fixed;
+	top: 8px;
+	left: 8px;
+	transform: translate(200px, 200px);
+	transition-timing-function: ease-out;
+	z-index: 1000;
+}
+
+body {
+	font-family: Garamond, "こころ明朝体", serif;
+	line-height: 1.75;
+	font-size: 16px;
+}
+
+body::after {
+	content: "";
+	position: fixed;
+	/*固定表示*/
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 1000;
+	/*他のスタッキングコンテキストとかち合った時用*/
+	background: url(../img/main.jpg);
+	animation: min-anim 1s forwards;
+	/*アニメーション付与*/
+	animation-delay: 2s;
+	/*好みで遅延*/
+	transform-origin: top;
+	/*変化の起点*/
+}
+
+/*背景が縮むアニメーション*/
+@keyframes min-anim {
+	0% {
+		transform: scaleY(1);
+		/*画面全体を覆う*/
+	}
+
+	100% {
+		transform: scaleY(0);
+		/*高さ0*/
+		visibility: hidden;
+		/*非表示*/
+	}
+}
+
+
+
+button {
+	font-family: Garamond,
+		"こころ明朝体",
+		serif;
+}
+
+
+/*パディングをサイズ内側にする処理*/
+* {
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*ーーーーーーーーーーー*/
+/*この下から記述*/
+/*ーーーーーーーーーーー*/
+
+.header {
+	height: 56px;
+	background-color: #000101;
+}
+
+.a-box {
+	background: url(../img/itsukusimajinja-mg.jpg);
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 480px;
+	object-fit: cover;
+	position: relative;
+}
+
+.a1-box {
+	display: flex;
+	flex-direction: column;
+	padding-left: 56px;
+	position: absolute;
+	bottom: 36px;
+}
+
+.a-title {
+	font-size: 64px;
+	color: white;
+	text-shadow: 1.5px 1.5px #bfbebe;
+
+}
+
+.a-text {
+	padding-left: 12px;
+	font-size: 32px;
+	color: white;
+	text-shadow: 1px 1px #bfbebe;
+}
+
+.b-box {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-top: 64px;
+	margin-bottom: 64px;
+	margin-right: 64px;
+	margin-left: 64px;
+}
+
+.b1-picture {
+	width: 100%;
+	animation: 10s linear infinite rotation1;
+	padding: 24px;
+}
+
+@keyframes rotation1 {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.b1-picture:hover {
+	animation-duration: 1s;
+}
+
+.b1-text {
+	margin-top: 32px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	padding-left: 56px;
+	font-size: 16px;
+	background-color: #bfbebe3a;
+	margin-right: 64px;
+	margin-left: 64px;
+}
+
+.b1-p {
+	background: url(../img/fujisan.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 300px;
+	object-fit: cover;
+	position: relative;
+	margin-top: 48px;
+	margin-bottom: 48px;
+	margin-right: 64px;
+	margin-left: 64px;
+}
+
+.c-box {
+	display: flex;
+	justify-content: center;
+	margin-top: 64px;
+	margin-bottom: 24px;
+	margin-right: 64px;
+	margin-left: 64px;
+	background-color: rgb(255, 245, 232);
+}
+
+.c-title {
+	text-align: center;
+	width: 30%;
+	padding-left: 36px;
+}
+
+.c-text {
+	padding-right: 36px;
+}
+
+.d-back {
+	margin-top: 16px;
+}
+
+.d-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 64px;
+	margin-left: 64px;
+	background-color: rgb(251, 246, 240);
+}
+
+.d1-box {
+	margin: 16px;
+	justify-content: center;
+	padding: 16px;
+	border: solid 1px #bfbebe;
+}
+
+.d2-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.d2-picture {
+	justify-content: center;
+	height: 100%;
+	overflow: hidden;
+}
+
+.d2-picture :hover {
+	transform: scale(2.5);
+	transition: 1s all;
+}
+
+.d-img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+}
+
+
+.d2-text {
+	justify-content: center;
+	margin-top: 16px;
+}
+
+.e-background {
+	background-color: #000101;
+	margin-top: 8px;
+	margin-left: 64px;
+	margin-right: 64px;
+	padding-top: 24px;
+	padding-bottom: 24px;
+}
+
+.e-box {
+	/* background: url(../img/teien-1.jpg); */
+	background-size: cover;
+	object-fit: cover;
+}
+
+.e-fusuma {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.e1-fusuma {
+	width: 25%;
+}
+
+.e1-fusuma-left {
+	width: 25%;
+	animation-name: fusuma-left;
+	animation-duration: 5s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+}
+
+@keyframes fusuma-left {
+	10% {
+		transform: translateX(0%);
+	}
+
+	20% {
+		transform: translateX(-100%);
+	}
+
+	70% {
+		transform: translateX(-100%);
+	}
+
+	80% {
+		transform: translateX(0%);
+	}
+
+	100% {
+		transform: translateX(0%);
+	}
+
+}
+
+.e1-fusuma-right {
+	width: 25%;
+	animation-name: fusuma-right;
+	animation-duration: 5s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+}
+
+@keyframes fusuma-right {
+	10% {
+		transform: translateX(0%);
+	}
+
+	20% {
+		transform: translateX(100%);
+	}
+
+	70% {
+		transform: translateX(100%);
+	}
+
+	80% {
+		transform: translateX(0%);
+	}
+
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+
+.e1-p {
+	width: 100%;
+	height: auto;
+}
+
+.top {
+	line-height: 60px;
+	text-align: center;
+	position: fixed;
+	bottom: 24px;
+	right: 20px;
+	z-index: 999;
+	font-size: 40px;
+	color: #636262;
+	text-shadow: 1.5px 1.5px #bfbebe;
+}
+
+.top:hover {
+	color: #790303;
+	text-shadow: 1.5px 1.5px #bfbebe;
+}
+
+
+
+
+
+
+/*どの部分のcssに対して
+命令をしているのかコメントを
+記載しよう！
+---------------------*/
+
+
+/*
+---------------------*/
+
+
+
+/*
+---------------------*/
+
+
+
+/*
+---------------------*/
+
+
+
+/*
+---------------------*/
